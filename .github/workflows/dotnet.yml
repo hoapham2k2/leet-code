@@ -23,9 +23,17 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+    - name: Clean Project LeetCode
+      run: dotnet clean LeetCode
+    - name: Clean Project LeetCode
+      run: dotnet clean LeetCode.Test/
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore LeetCode
+    - name: Restore dependencies
+      run: dotnet restore LeetCode.Test
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build LeetCode --no-restore
+    - name: Build
+      run: dotnet build LeetCode.Test --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test LeetCode.Test --no-build --verbosity normal
