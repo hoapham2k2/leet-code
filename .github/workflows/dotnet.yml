@@ -26,7 +26,7 @@ jobs:
     - name: Clean Project LeetCode
       run: dotnet clean LeetCode
     - name: Clean Project LeetCode
-      run: dotnet clean LeetCode.Test/
+      run: dotnet clean LeetCode.Test
     - name: Restore dependencies
       run: dotnet restore LeetCode
     - name: Restore dependencies
